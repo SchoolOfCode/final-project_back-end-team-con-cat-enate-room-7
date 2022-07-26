@@ -1,4 +1,8 @@
 import express from 'express';
+import cors from "cors";
+import bodyParser from "body-parser";
+const jsonParser = bodyParser.json();
+
 const app = express();
 const PORT = process.env.port || 3000;
 
@@ -12,8 +16,7 @@ app.get("/", function (req, res) {
     });
 });
 
-app.use(express.json());
-// app.use()
+app.use(express.json(cors, bodyParser));
 
 app.listen(PORT, function () {
     console.log(`Server is running on port ${PORT}`);
