@@ -11,8 +11,9 @@
 		"createRemindersTable": "node -r dotenv/config ./db/scripts/createRemindersTable.js",
 		"createPetsTable": "node -r dotenv/config ./db/scripts/createPetsTable.js",
 		"truncatePetsTable": "node -r dotenv/config ./db/scripts/truncatePetsTable.js",
-		"truncateRemindersTable": "node -r dotenv/config ./db/scripts/truncatePetsTable.js",
-		"truncateSymptomsTable": "node -r dotenv/config ./db/scripts/truncatePetsTable.js"
+		"truncateRemindersTable": "node -r dotenv/config ./db/scripts/truncateRemindersTable.js",
+		"truncateSymptomsTable": "node -r dotenv/config ./db/scripts/truncateSymptomsTable.js",
+		"dropSymptomsTable": "node -r dotenv/config ./db/scripts/dropSymptomsTable.js"
 	},
 	"repository": {
 		"type": "git",
