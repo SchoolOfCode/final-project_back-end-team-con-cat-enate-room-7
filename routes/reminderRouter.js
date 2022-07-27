@@ -7,6 +7,8 @@ const jsonParser = bodyParser.json();
 import {
   getAllReminders,
   createNewReminder,
+  updateReminder,
+  deleteReminderById,
 } from "../models/remindersModels.js";
 
 const reminderRouter = express.Router(cors(), jsonParser);
@@ -29,5 +31,28 @@ reminderRouter.post("/", async function (req, res) {
     payload: results,
   });
 });
+
+reminderRouter.patch("/:id", async function (req, res) {
+  const id = req.params.id;
+  const updatedReminder = req.body
+  const results = await updateReminder(id, updatedReminder);
+  res.json({
+    success: true,
+    message: `Updated reminder with id ${id}`,
+    payload: results,
+});
+});
+
+reminderRouter.delete("/:id", async function (req, res) {
+  const id = req.params.id
+  const results = await deleteReminderById(id)
+  res.json({
+    success: true,
+    message: `Deleted reminder with id ${id}`,
+    payload: results,
+
+  });
+});
+
 
 export default reminderRouter;
