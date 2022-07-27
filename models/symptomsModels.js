@@ -1,12 +1,12 @@
 import { query } from "../db/index.js";
 
 export async function getAllSymptoms() {
-  const data = await query(`SELECT * FROM symptoms;`);
-  return data.rows;
+	const data = await query(`SELECT * FROM symptoms;`);
+	return data.rows;
 }
 
 export async function getSymptomsByUserId(id) {
-	const data = await query(`SELECT * FROM symptoms WHERE user_id = ${id}`);
+	const data = await query(`SELECT * FROM symptoms WHERE user_id = '${id}'`);
 
 	return data.rows;
 }
@@ -40,7 +40,7 @@ export async function createNewSymptom(newSymptom) {
 }
 
 export async function deleteSymptomByID(id) {
-  await query(`DELETE FROM symptoms WHERE symptoms_id = ${id}`)
-  const data = await query(`SELECT * FROM symptoms;`);
-  return data.rows;
+	await query(`DELETE FROM symptoms WHERE symptoms_id = '${id}'`);
+	const data = await query(`SELECT * FROM symptoms;`);
+	return data.rows;
 }
