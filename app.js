@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 const jsonParser = bodyParser.json();
 import symptomsRouter from "./routes/symptomsRouter.js";
 import reminderRouter from "./routes/reminderRouter.js";
+import petsRouter from "./routes/petsRouter.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 
 app.use("/symptoms", symptomsRouter);
 app.use("/reminders", reminderRouter);
+app.use("/pets", petsRouter);
 
 app.get("/", function (req, res) {
   res.json({
