@@ -12,13 +12,13 @@ describe("tests that the Pets routes, are returning all data from DB as well as 
   test("posting new data on to pets database", async function () {
     await new Promise((resolve) => setTimeout(() => resolve(), 2000));
     const response = await request(app).post("/pets").send({
-      user_id: String,
-      pet_id: String,
-      name: String,
-      species: Boolean,
-      breed: String,
-      age: Number,
-      weight: Number,
+      user_id: "3",
+      pet_id: "3",
+      name: "Tall Cat",
+      species: true,
+      breed: "Tabby",
+      age: 37,
+      weight: 50,
     });
     expect(response.statusCode).toEqual(200);
     expect(response.body).toStrictEqual({
@@ -26,13 +26,13 @@ describe("tests that the Pets routes, are returning all data from DB as well as 
       message: "Created new pet",
       payload: [
         {
-          user_id: String,
-          pet_id: String,
-          name: String,
-          species: Boolean,
-          breed: String,
-          age: Number,
-          weight: Number,
+            user_id: expect.any(String),
+            pet_id: expect.any(String),
+            name: expect.any(String),
+            species: expect.any(Boolean),
+            breed: expect.any(String),
+            age: expect.any(Number),
+            weight: expect.any(Number),
         },
       ],
     });
