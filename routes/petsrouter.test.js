@@ -21,20 +21,9 @@ describe("tests that the Pets routes, are returning all data from DB as well as 
       weight: 50,
     });
     expect(response.statusCode).toEqual(200);
-    expect(response.body).toStrictEqual({
+    expect(response.body).toMatchObject({
       success: true,
       message: "Created new pet",
-      payload: [
-        {
-            user_id: expect.any(String),
-            pet_id: expect.any(String),
-            name: expect.any(String),
-            species: expect.any(Boolean),
-            breed: expect.any(String),
-            age: expect.any(Number),
-            weight: expect.any(Number),
-        },
-      ],
     });
   });
 
@@ -50,20 +39,9 @@ describe("tests that the Pets routes, are returning all data from DB as well as 
       weight: 50,
     });
     expect(response.statusCode).toEqual(200);
-    expect(response.body).toStrictEqual({
+    expect(response.body).toMatchObject({
       success: true,
       message: "Updated pet info",
-      payload: [
-        {
-            user_id: expect.any(String),
-            pet_id: expect.any(String),
-            name: expect.any(String),
-            species: expect.any(Boolean),
-            breed: expect.any(String),
-            age: expect.any(Number),
-            weight: expect.any(Number),
-        },
-      ],
     });
   });
   
