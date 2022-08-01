@@ -40,6 +40,7 @@ app.use(function (err, req, res, next) {
   res.status(500).json(err);
 });
 
+//this needs commenting out in order for tests to run correctly, fix this ina  future sprint
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
 });
