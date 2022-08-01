@@ -6,22 +6,37 @@ import bodyParser from "body-parser";
 const jsonParser = bodyParser.json();
 import {
   getAllSymptoms,
-	getSymptomsByUserId,
 	createNewSymptom,
-  deleteSymptomByID
+  deleteSymptomByID,
+  getSymptomsByPetId,
+  getSymptomsBySymptomId
 } from "../models/symptomsModels.js";
 
 const symptomsRouter = express.Router(cors(), jsonParser);
 
 symptomsRouter.get("/:id", async function (req, res) {
+
+	if(req.query.symptoms_id){
+		const petId = req.params.id;
+		const symptomsId = req.query.symptoms_id
+		const results = await getSymptomsBySymptomId(petId, symptomsId)
+		res.json({
+			success: true,
+			message: `Display all incidents of symptom id ${symptomsId} for pet with id ${petId}`,
+			payload: results,
+		});
+		return
+	}
+
 	const id = req.params.id;
-	console.log(id);
-	const results = await getSymptomsByUserId(id);
+	console.log(req.query);
+	const results = await getSymptomsByPetId(id);
 	res.json({
 		success: true,
-		message: `Display user with id ${id}`,
+		message: `Display all symptoms of pet with id ${id}`,
 		payload: results,
 	});
+	return
 });
 
 symptomsRouter.get("/", async function (req, res) {
