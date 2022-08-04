@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 const jsonParser = bodyParser.json();
 import {
   getAllReminders,
+  getPetReminders,
   createNewReminder,
   updateReminder,
   deleteReminderById,
@@ -14,12 +15,24 @@ import {
 const reminderRouter = express.Router(cors(), jsonParser);
 
 reminderRouter.get("/", async function (req, res) {
+  if(req.query.pet_id){
+    const params = req.query.pet_id;
+    const results = await getPetReminders(params);
+    res.json({
+      success: true,
+      message: `Displaying all reminders for pet with id = ${params}`,
+      payload: results,
+    });
+    return
+  }
+
   const results = await getAllReminders();
   res.json({
     success: true,
     message: `Displaying all reminders`,
     payload: results,
   });
+  return
 });
 
 reminderRouter.post("/", async function (req, res) {

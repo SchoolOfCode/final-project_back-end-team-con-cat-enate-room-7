@@ -29,7 +29,6 @@ symptomsRouter.get("/:id", async function (req, res) {
 	}
 
 	const id = req.params.id;
-	console.log(req.query);
 	const results = await getSymptomsByPetId(id);
 	res.json({
 		success: true,
@@ -52,7 +51,6 @@ res.json({
 
 symptomsRouter.post("/", async function (req, res) {
 	const newSymptom = req.body;
-	console.log(newSymptom);
 	const results = await createNewSymptom(newSymptom);
 	res.json({
 		success: true,
@@ -63,7 +61,6 @@ symptomsRouter.post("/", async function (req, res) {
 
 symptomsRouter.delete("/:id", async function (req, res) {
   const id = req.params.id;
-  console.log(id)
   const results = await deleteSymptomByID(id)
   res.json({
     success: true,
