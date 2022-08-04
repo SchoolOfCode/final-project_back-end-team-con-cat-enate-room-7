@@ -5,6 +5,11 @@ export async function getAllReminders() {
   return data.rows;
 }
 
+export async function getPetReminders(id) {
+  const data = await query(`SELECT * FROM reminders WHERE pet_id=$1;`,[id]);
+  return data.rows;
+}
+
 export async function createNewReminder(newReminder) {
   const {
     user_id,

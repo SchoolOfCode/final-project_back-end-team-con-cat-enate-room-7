@@ -1,7 +1,16 @@
 import { query } from "../db/index.js";
 
-export async function getAllPets() {
-  const data = await query("SELECT * FROM pets;");
+export async function getAllPets(id) {
+  const data = await query(`SELECT * FROM pets WHERE user_id = $1;`,[id]);
+  return data.rows;
+}
+export async function getPet(id, params) {
+  const data = await query(`SELECT * FROM pets WHERE user_id = $1 AND pet_id=$2;`,[id,params]);
+  return data.rows;
+}
+
+export async function getPetNoUser(params) {
+  const data = await query(`SELECT * FROM pets WHERE pet_id=$1;`,[params]);
   return data.rows;
 }
 
