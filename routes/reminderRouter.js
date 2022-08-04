@@ -15,7 +15,6 @@ import {
 const reminderRouter = express.Router(cors(), jsonParser);
 
 reminderRouter.get("/", async function (req, res) {
-  console.log(req.query)
   if(req.query.pet_id){
     const params = req.query.pet_id;
     const results = await getPetReminders(params);
