@@ -26,12 +26,7 @@ reminderRouter.get("/", async function (req, res) {
     return
   }
 
-  const results = await getAllReminders();
-  res.json({
-    success: true,
-    message: `Displaying all reminders`,
-    payload: results,
-  });
+  res.send("Please put in your pet id after reminders/?pet_id= to get schedule info")
   return
 });
 

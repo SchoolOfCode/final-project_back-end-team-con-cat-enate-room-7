@@ -26,6 +26,8 @@ petsRouter.get("/", async function (req, res) {
         });
         return
   }
+  res.send("Please put in your pet id after pets/?pet_id= to get your pet info")
+  return
 })
 petsRouter.get("/:id", async function (req, res) {
 
