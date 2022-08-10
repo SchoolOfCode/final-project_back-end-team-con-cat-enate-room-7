@@ -13,8 +13,9 @@
 3. [Run Locally](#Run-Locally)
 4. [Running Tests](#Running-Tests)
 5. [Tech Stack](#tech-stack)
-6. [The Team](#The-Team)
-7. [Appendix](#appendix)
+6. [API References](#api-reference)
+7. [The Team](#The-Team)
+8. [Appendix](#appendix)
 
 <br/>
 
@@ -342,10 +343,35 @@ To run tests, run the following command
 | `date`  | `string` | **Required**. Date that the task needs to be completed by |
 | `completed`  | `boolean` | **Required**. Whether the task has been completed (default value is false) |
 | `repeated`  | `boolean` | **Required**. Whether the task is done needs to be done multiple times |
-| `frequency`      | `string` | How often the task needs to be completed Suitable entries: (null, 1, 7, 30, 365|
+| `frequency`      | `string` | How often the task needs to be completed Suitable entries: (null, 1, 7, 30, 365)|
 
 <br />
 
+#### Update the completed parameter of a reminder
+
+```http
+  Patch /reminders/${reminder_id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `reminder_id`  | `string` | **Required**. ID associated with a reminder entry|
+| `body`     | `JSON`    | **Required**. JSON object containing symptom details |
+| `completed`  | `boolean` | **Required**. Whether the task has been completed  |
+
+<br/>
+
+#### Delete a reminder
+
+```http
+  Delete /reminders/${reminder_id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `reminder_id`  | `string` | **Required**. ID associated with a reminder entry|
+
+<br/>
 ---
 
 <br />
