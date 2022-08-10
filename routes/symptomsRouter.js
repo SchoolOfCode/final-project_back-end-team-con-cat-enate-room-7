@@ -5,7 +5,6 @@ import cors from "cors";
 import bodyParser from "body-parser";
 const jsonParser = bodyParser.json();
 import {
-  getAllSymptoms,
 	createNewSymptom,
   deleteSymptomByID,
   getSymptomsByPetId,
@@ -39,12 +38,7 @@ symptomsRouter.get("/:id", async function (req, res) {
 });
 
 symptomsRouter.get("/", async function (req, res) {
-  const results = await getAllSymptoms();
-res.json({
-		success: true,
-		message: `Displaying all symptom results`,
-		payload: results,
-	});
+res.send("Please put in your pet id after symptoms/ to get symptom info");
 })
 
 

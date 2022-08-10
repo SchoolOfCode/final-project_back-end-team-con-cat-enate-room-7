@@ -1,9 +1,9 @@
 import { query } from "../db/index.js";
 
-export async function getAllReminders() {
-  const data = await query(`SELECT * FROM reminders;`);
-  return data.rows;
-}
+// export async function getAllReminders() {
+//   const data = await query(`SELECT * FROM reminders;`);
+//   return data.rows;
+// }
 
 export async function getPetReminders(id) {
   const data = await query(`SELECT * FROM reminders WHERE pet_id=$1;`,[id]);
