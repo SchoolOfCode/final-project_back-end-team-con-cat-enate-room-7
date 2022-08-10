@@ -5,11 +5,13 @@ const jsonParser = bodyParser.json();
 import symptomsRouter from "./routes/symptomsRouter.js";
 import reminderRouter from "./routes/reminderRouter.js";
 import petsRouter from "./routes/petsRouter.js";
+import helmet from "helmet";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(helmet());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

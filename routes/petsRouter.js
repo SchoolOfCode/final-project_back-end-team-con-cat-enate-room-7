@@ -5,7 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 const jsonParser = bodyParser.json();
 import {
-    getAllPets,
+  getAllPets,
     getPet,
     createNewPet,
     updatePet,

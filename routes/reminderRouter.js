@@ -5,7 +5,6 @@ import cors from "cors";
 import bodyParser from "body-parser";
 const jsonParser = bodyParser.json();
 import {
-  getAllReminders,
   getPetReminders,
   createNewReminder,
   updateReminder,
