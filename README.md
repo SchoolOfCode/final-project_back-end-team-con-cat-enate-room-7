@@ -26,11 +26,13 @@
 
 Welcome to Care-Full!
 
+This app was created as part of the School of Code bootcamp, a team of 6 animal lovers came together and began brainstorming what real world problem we wanted to solve. Soon we realised a common issue experienced amongst pet owners - remembering when specific symptoms began and tracking how many times a symptom has been experienced. This then led us onto talking about the difficulty of remembering when you need to administer medication and attend appointments. After lots of ideation and grand ideas, we pulled ourselves back to reality and came up with a viable product that we could plan and produce in only 4 weeks, this is the result.
+
+Problem statement:
 Having a sick pet is a stressful situation, on top of our already busy lives, this additional stress can make it difficult to remember the specific details of your pet's illness and their needs.
 
-This app aims to alleviate some of the stress that comes with having a sick pet by providing the user with an easy way to track symptoms and medications and facilitate better communication with their vet.
-
-This repository holds the code to make RESTful API's, it runs on an Express Server, making queries to a POSTGRESQL Database. The credentials for the database will be stored in your environment variables.
+Solution:
+This app aims to alleviate some of the stress that comes with having a sick pet by providing the user with an easy way to track symptoms and medications and facilitate better and more accurate in person communication when visiting the vets.
 
 The server handles requests to a database with 3 tables that allows for users to add and update pet details as well as adding symptoms and appointments.
 
@@ -152,7 +154,7 @@ To run tests, run the following command
 </br>
 **Server:** Node, Express, PostreSQL, Nanoid
 </br>
-**Client-side Testing:** React-test library, Cypress
+**Client-side Testing:** React Testing Library, Cypress
 </br>
 **Server-side Testing:** Supertest, Jest
 
