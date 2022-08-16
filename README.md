@@ -35,7 +35,7 @@ Having a sick pet is a stressful situation, on top of our already busy lives, th
 Solution:
 This app aims to alleviate some of the stress that comes with having a sick pet by providing the user with an easy way to track symptoms and medications and facilitate better and more accurate in person communication when visiting the vets.
 
-This repository holds the code to make API's, it runs on an Express Server, making queries to a POSTGRESQL Database. The credentials for the database will be stored in your environment variables.
+This repository holds the code to make our API, it runs on an Express Server, making queries to a POSTGRESQL Database. The credentials for the database will be stored in your environment variables.
 
 The server handles requests to a database with 3 tables that allows for users to add and update pet details as well as adding symptoms and appointments.
 
