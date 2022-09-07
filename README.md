@@ -41,7 +41,7 @@ The server handles requests to a database with 3 tables that allows for users to
 
 The Care-Full website makes fetch requests to this server when running locally.
 
-**This README is for the Back-end of the Care-Full app. If you would like to explore the Front-end of the app please go to the [Front-end repository](https://github.com/MiguelLamas/final-project-front-end-care-full-app)**
+**This README is for the Back-end of the Care-Full app. If you would like to explore the Front-end of the app please go to the [Front-end repository](https://github.com/SchoolOfCode/final-project_front-end-team-con-cat-enate-room-7)**
 
 <br/>
 
